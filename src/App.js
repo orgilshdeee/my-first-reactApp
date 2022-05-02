@@ -1,11 +1,12 @@
-import Par from "./Par.js";
-import "./App.css";
+import Player from "./Player.js";
+import "./player.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello my first React</h1>
-      <Par />
+      <Player />
+      <Player />
+      <Player />
     </div>
   );
 }
