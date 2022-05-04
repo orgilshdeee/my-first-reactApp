@@ -1,5 +1,4 @@
 import Player from "./Player.js";
-import "./player.css";
 
 function App() {
   return (

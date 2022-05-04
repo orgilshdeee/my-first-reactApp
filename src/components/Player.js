@@ -1,5 +1,5 @@
 import Score from "./Score.js";
-import "./player.css";
+import "../player.css";
 
 function Player() {
   return (
