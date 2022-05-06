@@ -6,3 +6,10 @@
   border: 1px solid black;
   justify-content: space-between;
 }
+
+.playerCardBG {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+  background-color: yellow;
+}

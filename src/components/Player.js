@@ -1,20 +1,16 @@
+import { useState } from "react";
 import Score from "./Score.js";
 import "../player.css";
 
 function Player(props) {
-  function increment(event) {
-    return console.log(event);
-  }
+  const [score, setScore] = useState(props.playerData.score);
+
   return (
     <>
-      <div className="playerCard">
+      <div className={props.average < score ? "playerCardBG" : "playerCard"}>
         <div>{props.playerData.name}</div>
         <div>
-          <Score
-            playerData={props.playerData}
-            send={increment}
-            modifyScore={props.modifyScore}
-          />
+          <Score score={score} setScore={setScore} />
         </div>
       </div>
     </>
