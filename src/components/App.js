@@ -1,17 +1,22 @@
 import Player from "./Player.js";
+import AddButton from "./AddButton";
+import { useState } from "react";
 
 let players = [
-  { name: "player1", gender: "male", age: 20, score: 10 },
-  { name: "player2", gender: "female", age: 21, score: 20 },
-  { name: "player3", gender: "female", age: 22, score: 30 },
-  { name: "player4", gender: "male", age: 19, score: 40 },
+  { name: "player1", score: 10 },
+  { name: "player2", score: 20 },
+  { name: "player3", score: 30 },
+  { name: "player4", score: 40 },
 ];
+
 function App() {
+  const [playerz, setPlayers] = useState(players);
   let total = 0;
   players.forEach((e) => (total += e.score));
   let average = total / players.length;
-  function showAll() {
-    return console.log(players);
+  function addingPlayer(e) {
+    setPlayers([...playerz, e]);
+    console.log(playerz);
   }
   return (
     <div className="App">
@@ -19,7 +24,7 @@ function App() {
       {players.map((e, index) => {
         return <Player playerData={e} key={index} average={average} />;
       })}
-      <button onClick={showAll}>show players in console</button>
+      <AddButton playerInfo={addingPlayer} />
     </div>
   );
 }
