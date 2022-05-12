@@ -6,11 +6,12 @@ function AddPlayer(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    props.playerInfo(
-      e.target.elements.getName.value,
-      e.target.elements.getScore.value
-    );
+    e.preventDefault();
+    props.playerInfo({
+      name: e.target.elements.getName.value,
+      score: e.target.elements.getScore.value,
+    });
+    setShow(false);
   };
   return (
     <>
